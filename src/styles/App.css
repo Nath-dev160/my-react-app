@@ -6,6 +6,7 @@
   background-size: cover;
   background-position: center;
   transition: 0.9s ease;
+  overflow: hidden;
 }
 
 html, body {
@@ -37,6 +38,10 @@ a{
   font-weight: 300;
   text-transform: uppercase;
   text-align:center;
+}
+h1{
+  font-family: var(--Josefin);
+  text-transform: uppercase;
 }
 h2{
   color: var(--White);
@@ -72,19 +77,38 @@ p{
   align-items: center;
   flex-wrap: wrap;
 }
-.logo{
+.logo,.footerlogo{
   background-image: url('../assets/images/logo.svg');
   width: 170px;
   height:32px;
   background-size:contain;
   border: none;
 }
-.navbtn{
+.footerlogo{
+  margin:0 auto;
+}
+.navbtn,.closebtn{
   height:16px;
   width:24px;
-  background-image: url('../assets/images/icon-hamburger.svg');
   background-size:contain;
   border: none;
+  cursor:pointer;
+  z-index: 6;
+}
+.navbtn{
+ background-image: url('../assets/images/icon-hamburger.svg');
+}
+.closebtn{
+ background-image: url('../assets/images/icon-close.svg');
+}
+#toggle{
+    height:25px;
+  width:24px;
+  position: absolute;
+  right: 0;
+}
+#toggle:checked  .Nav{
+  width: 100%;
 }
 .intro{
   position: relative;
@@ -100,27 +124,33 @@ p{
   text-transform: uppercase;
   padding: 25px;
   letter-spacing: 5px;
-  overflow: scroll;
+  overflow: hidden;
 }
 .intro>h1{
   text-align:left;
 }
-.Nav{
-  width: 100%;
+.Nav,.navActive{
   height: 100vh;
   background-color: var(--Black);
   position:fixed;
   top: 0;
-  z-index:1;
+  z-index:5;
   color: var(--White);
-  display: none;
+  overflow: hidden;
+  text-align:center;
 }
-.Nav>ul{
+.Nav{
+    width: 0%;
+}
+.navActive{
+  width: 100%;
+}
+.Nav>ul,.navActive>ul{
   font-family:var(--Josefin);
-  margin: 180px 0 0 5%;
+  margin: 150px 0 0 5%;
   text-transform: uppercase;
 }
-.Nav>ul>li{
+.Nav>ul>li,.navActive>ul>li{
   padding-bottom: 10px;
   font-size: 25px;
 }
@@ -128,6 +158,7 @@ p{
 .Main{
   width: 90%;
   margin: 70px 0 0 5%;
+  perspective: 100%;
 }
 .description{
   margin: 0 0 75px 0;
@@ -146,7 +177,7 @@ p{
   grid-auto-columns: auto ;
   grid-gap: 15px;
   margin-top: 50px;
-  perspective: 800px;
+  perspective: 2000px;
 }
 .blur_wrapper{
   position: relative;
@@ -221,9 +252,13 @@ p{
 .fisheye>h2{
   width: 200px;
 }
+.blur_wrapper:hover{
+    transform: translateZ(50px);
+  transform-style: preserve-3d;
+   box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+}
 .blur_wrapper:hover .blur_background_earth{
   filter: blur(8px);
-  transform: translateY(50px);
 }
 .blur_wrapper:hover .blur_background_pocket{
   filter: blur(8px);
@@ -318,7 +353,7 @@ border-radius: 2px;
   padding-top: 5px;
 }
 /*for larger screens */
-@media only screen and (max-width:1440px){
+@media only screen and (min-width:1440px){
 .Top{
   background-image:url("../assets/images/desktop/image-hero.jpg");
 }
@@ -380,12 +415,18 @@ border-radius: 2px;
 .description{
   height: 400px;
   position: relative;
+  perspective: 400px;
 }
 .interactive-vr{
   background-image: url("../assets/images/desktop/image-interactive.jpg");
   width: 50%;
   height: 350px;
   background-size: contain;
+  pointer:cursor;
+}
+.interactive-vr:hover{
+  transform: translateZ(-50px);
+  transform-style: preserve-3d;
 }
 .description>div:nth-of-type(2){
 position: absolute;
@@ -395,7 +436,11 @@ padding: 50px 10px 40px  55px;
 bottom:30px;
 left: 40%;
 text-align: left;
-
+}
+.description>div:nth-of-type(2):hover{
+    transform: translateZ(50px);
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.08);
 }
 .description>div:nth-of-type(2)>h1{
   text-align: left;

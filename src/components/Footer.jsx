@@ -4,7 +4,7 @@ function Footer(){
   return(
     <div className="footer">
     <div>
-      <div className="logo"></div>
+      <div className="footerlogo"></div>
        <ul>
   <li> About</li>
   <li> Careers</li>

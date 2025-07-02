@@ -1,9 +1,9 @@
 import React from 'react';
 import Head from './Head.jsx';
 
-function Nav(){
+function Nav({isActive}){
   return(
-    <div className="Nav">
+    <div className={isActive? 'navActive' : 'Nav'}>
     <Head/>
     <ul>
   <li> <a href="#">About</a> </li>
