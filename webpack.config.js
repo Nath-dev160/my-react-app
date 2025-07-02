@@ -1,6 +1,5 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -12,9 +11,13 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(js|jsx)$/,             // JS and JSX handled by Babel
         exclude: /node_modules/,
         use: 'babel-loader',
+      },
+      {
+        test: /\.css$/i,                 // CSS handled separately
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },

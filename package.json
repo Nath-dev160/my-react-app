@@ -22,14 +22,17 @@
     "@babel/core": "^7.27.4",
     "@babel/preset-env": "^7.27.2",
     "@babel/preset-react": "^7.27.1",
+    "@svgr/webpack": "^8.1.0",
     "autoprefixer": "^10.4.21",
     "babel-loader": "^8.4.1",
+    "css-loader": "^7.1.2",
     "eslint": "^9.28.0",
     "html-webpack-plugin": "^5.5.0",
     "postcss": "^8.5.4",
     "prettier": "^3.5.3",
+    "style-loader": "^4.0.0",
     "tailwindcss": "^4.1.8",
-    "webpack": "^5.99.0",
+    "webpack": "^5.99.9",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.0"
   }

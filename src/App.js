@@ -1,16 +1,20 @@
 import React from 'react';
-import { Button, Typography, Container } from '@mui/material';
+import Top from './components/Top.jsx';
+import Nav from './components/navbar.jsx';
+import Main from './components/Main.jsx'
+import Footer from './components/Footer.jsx';
+import "./styles/App.css";
 
 function App() {
   return (
-    <Container>
-      <Typography variant="h3" component="h1" gutterBottom>
-        Welcome to MUI!
-      </Typography>
-      <Button variant="contained" color="primary">
-        Click Me
-      </Button>
-    </Container>
+    
+    <div className="App">
+    <Nav/>
+    <Top/>  
+    <Main/>
+    <Footer/>
+    
+    </div>
   );
 }
 
