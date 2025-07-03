@@ -1,10 +1,10 @@
 import React from 'react';
 import Head from './Head.jsx';
 
-function Nav({isActive}){
+function Nav({isActive,onToggle}){
   return(
-    <div className={isActive? 'navActive' : 'Nav'}>
-    <Head/>
+      <div className={isActive ? 'navActive' : 'Nav'}>
+      <Head onToggle={onToggle} isActive={isActive} />
     <ul>
   <li> <a href="#">About</a> </li>
   <li> <a href="#">Careers</a> </li>

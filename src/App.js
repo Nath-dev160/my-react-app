@@ -15,8 +15,8 @@ console.log('toggle is now :', isActive);
 };
   return (
     <div className="App">
-    <Nav isActive={isActive}/>
-    <Top onToggle={toggle}/>  
+    <Nav isActive={isActive} onToggle={toggle} />
+    <Top onToggle={toggle} isActive={isActive} /> 
     <Main/>
     <Footer/>
     

@@ -6,7 +6,10 @@ function Head({onToggle,isActive}){
   return(
      <div className="head">
     <div className="logo"></div>
-    <div className={isActive? 'closebtn' : 'navbtn'} onClick={onToggle}></div>
+    <div
+        className={isActive ? 'closebtn' : 'navbtn'}
+        onClick={onToggle}
+      ></div>
     </div>
     );
 };
