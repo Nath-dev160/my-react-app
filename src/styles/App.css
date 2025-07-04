@@ -6,9 +6,27 @@
   background-size: cover;
   background-position: center;
   transition: 0.9s ease;
-  overflow: hidden;
 }
-
+::-webkit-scrollbar{
+  width: 10px;
+  transition: opacity 0.3s ease;
+}
+::-webkit-scrollbar-track{
+  background:linear-gradient(
+    to bottom,#2c234d,#3a2b6d,#5e3ca8);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb{
+background:linear-gradient(to bottom, #a58bff,#837eff);
+border-radius: 10px;
+height: 5px;
+opacity: 0;
+transition: opacity 0.4s ease,background-color 0.3s ease;
+}
+::-webkit-scrollbar-thumb:hover{
+background:linear-gradient(to bottom,#c0a7ff,#9b8bff);
+opacity: 1;
+  }
 html, body {
   width: 100%;
   overflow-x: hidden;
@@ -65,7 +83,7 @@ p{
   z-index: 0;
 }
 .head{
-  position: sticky;
+  position: absolute;
   z-index: 3;
   width: 90%;
   height:60px;
@@ -147,7 +165,7 @@ p{
 }
 .Nav>ul,.navActive>ul{
   font-family:var(--Josefin);
-  margin: 150px 0 0 5%;
+  margin: 150px 0 0 auto;
   text-transform: uppercase;
 }
 .Nav>ul>li,.navActive>ul>li{
@@ -363,14 +381,14 @@ border-radius: 2px;
 .Nav{
   background-color: transparent;
   height: 100px;
+  width: 100%;
   display: block;
-  top: 0;
+  top: 20px;
   position: absolute;
 }
-.Top>.head{
+.Nav>.head{
   display: none;
 }
-
 .Nav>ul{
   display: flex;
   flex-direction: row;
