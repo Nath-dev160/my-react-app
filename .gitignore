@@ -1,5 +1,8 @@
-node_modules/
-dist/
-build/
+/node_modules
+/.pnp
+.pnp.js
+/dist
+/build
 .env
 .DS_Store
+*.log
